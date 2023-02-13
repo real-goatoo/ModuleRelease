@@ -11,14 +11,14 @@ jobs:
         with:
           fetch-depth: 2
       - run: git checkout HEAD^
-      - name: Get Version
-        id: get_version
-        uses: QwerMike/xpath-action@v1
+      - uses: fabasoad/data-format-converter-action@main
+        id: xml2json
         with:
-          filename: 'Config/module.xml'
-          expression: '//version/text()'
+          input: 'Config/module.xml'
+          from: 'xml'
+          to: 'json'
       - name: Print result
-        run: echo "${{ steps.get_version.outputs }}"          
+        run: echo "${{ fromJson(steps.get_version.outputs.output).version }}"        
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
         with:
