@@ -2,3 +2,18 @@ name: release
 on:
   push:
     branches: [ master, main ]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get XML
+        id: getxml
+        uses: mavrosxristoforos/get-xml-info@1.0
+        with:
+          xml-file: 'Config/module.xml'
+          xpath: '//module/version'
+      - name: Create Release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          tag: ${{ steps.getxml.outputs.info }}
+  
