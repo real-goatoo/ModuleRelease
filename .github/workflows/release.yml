@@ -9,7 +9,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: main
+          fetch-depth: 2
+      - run: git checkout HEAD^
       - name: Get XML
         id: getxml
         uses: mavrosxristoforos/get-xml-info@1.0
