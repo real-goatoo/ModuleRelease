@@ -10,7 +10,7 @@ jobs:
         id: getxml
         uses: mavrosxristoforos/get-xml-info@1.0
         with:
-          xml-file: 'Config/module.xml'
+          xml-file: '/Config/module.xml'
           xpath: '//module/version'
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
