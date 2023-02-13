@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
     <fullnamespace>OpenApi\OpenApi</fullnamespace>
     <descriptive locale="en_US">
-        <title>Add an API to Thelia</title>
+        <title>Add an API to Thelia aaa</title>
         <!--
         <subtitle></subtitle>
         <description></description>
