@@ -6,11 +6,13 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Get XML
         id: getxml
         uses: mavrosxristoforos/get-xml-info@1.0
         with:
-          xml-file: '../Config/module.xml'
+          xml-file: 'Config/module.xml'
           xpath: '/module/version'
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
