@@ -6,11 +6,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-      - run: git checkout HEAD^
+      - uses: actions/checkout@v3
       - uses: fabasoad/data-format-converter-action@main
         id: xml2json
         with:
